@@ -297,20 +297,6 @@ h1:hover {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.9rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.3), transparent);
-  transition: left 0.5s;
-  z-index: -1;
 }
 
 .cta-btn:hover {
@@ -318,10 +304,6 @@ h1:hover {
   color: var(--bg-color);
   box-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
   transform: translateY(-2px);
-}
-
-.cta-btn:hover::before {
-  left: 100%;
 }
 
 /* Contact Button */
@@ -338,21 +320,6 @@ h1:hover {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.9rem;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.contact-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.3), transparent);
-  transition: left 0.5s;
-  z-index: -1;
 }
 
 .contact-btn:hover {
@@ -362,24 +329,9 @@ h1:hover {
   transform: translateY(-2px);
 }
 
-.contact-btn:hover::before {
-  left: 100%;
-}
-
 /* Sections */
 .section {
   padding: 8rem 10%;
-  position: relative;
-}
-
-.section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.3), transparent);
 }
 
 .section-title {
@@ -389,7 +341,6 @@ h1:hover {
   text-align: center;
   position: relative;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
-  word-spacing: 9999px;
 }
 
 .section-title:hover {
@@ -405,16 +356,6 @@ h1:hover {
   background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
   margin: 1rem auto 0;
   border-radius: 2px;
-  animation: underline-expand 0.6s ease-out;
-}
-
-@keyframes underline-expand {
-  from {
-    width: 0;
-  }
-  to {
-    width: 60px;
-  }
 }
 
 /* Glass Card Style */
@@ -427,29 +368,11 @@ h1:hover {
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   transform-style: preserve-3d;
   will-change: transform;
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0, 242, 255, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.5s;
 }
 
 .glass-card:hover {
   border-color: rgba(0, 242, 255, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 255, 0.15);
-}
-
-.glass-card:hover::before {
-  opacity: 1;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* About */
@@ -482,21 +405,6 @@ h1:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.skill-tag::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0, 242, 255, 0.1), transparent);
-  animation: none;
-  transition: all 0.5s;
 }
 
 .skill-tag i {
@@ -508,22 +416,6 @@ h1:hover {
   border-color: var(--accent-color);
   transform: translateY(-3px);
   color: var(--text-color);
-  box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
-}
-
-.skill-tag:hover::before {
-  animation: skill-pulse 0.5s ease-out;
-}
-
-@keyframes skill-pulse {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
 }
 
 /* Experience */
@@ -619,16 +511,6 @@ h1:hover {
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
-  animation: float-profile 3s ease-in-out infinite;
-}
-
-@keyframes float-profile {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
 .profile-img {
