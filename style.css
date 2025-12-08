@@ -592,26 +592,29 @@ footer {
 /* Music Player (floating) */
 .music-player {
   position: fixed;
-  right: 20px;
-  bottom: 22px;
+  right: 28px; /* give a little more gap from the edge */
+  bottom: 36px; /* lift it slightly above the very bottom */
   width: 340px;
-  max-width: calc(100% - 40px);
+  max-width: calc(100% - 56px);
   z-index: 2000;
   font-family: var(--font-body);
 }
 .music-player .mp-toggle {
   position: absolute;
-  left: -48px;
-  top: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-  color: #021012;
-  border: none;
+  left: -56px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-color);
+  border: 1px solid rgba(255,255,255,0.04);
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  transition: background 0.2s, transform 0.12s;
 }
+.music-player .mp-toggle:hover { background: linear-gradient(90deg, rgba(0,242,255,0.12), rgba(112,0,255,0.12)); transform: translateY(-50%) scale(1.03);} 
 .music-player .mp-inner {
   display: flex;
   align-items: center;
@@ -621,6 +624,17 @@ footer {
   padding: 10px;
   border-radius: 14px;
   backdrop-filter: blur(6px);
+  /* collapsed by default: hide details until opened */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease, visibility 0.25s;
+}
+.music-player .mp-inner.open {
+  max-height: 220px; /* enough for controls */
+  opacity: 1;
+  visibility: visible;
 }
 .mp-cover {
   width: 72px;
