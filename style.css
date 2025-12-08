@@ -526,19 +526,23 @@ h1:hover {
 .profile-container {
   margin-bottom: 2rem;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-img {
-  width: 200px;
-  height: 200px;
+  /* Force a symmetric circular avatar that scales responsively */
+  width: clamp(120px, 20vw, 200px);
+  height: clamp(120px, 20vw, 200px);
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent-color);
   box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 2;
+  display: block;
 }
 
 .profile-img:hover {
