@@ -590,75 +590,7 @@ footer {
 }
 
 /* Music Player (floating) */
-.music-player {
-  position: fixed;
-  right: 28px; /* give a little more gap from the edge */
-  bottom: 36px; /* lift it slightly above the very bottom */
-  width: 340px;
-  max-width: calc(100% - 56px);
-  z-index: 2000;
-  font-family: var(--font-body);
-}
-.music-player .mp-toggle {
-  position: absolute;
-  left: -56px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.06);
-  color: var(--text-color);
-  border: 1px solid rgba(255,255,255,0.04);
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  transition: background 0.2s, transform 0.12s;
-}
-.music-player .mp-toggle:hover { background: linear-gradient(90deg, rgba(0,242,255,0.12), rgba(112,0,255,0.12)); transform: translateY(-50%) scale(1.03);} 
-.music-player .mp-inner {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(10,10,10,0.6);
-  border: 1px solid rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  /* collapsed by default: hide details until opened */
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transition: max-height 0.35s ease, opacity 0.25s ease, visibility 0.25s;
-}
-.music-player .mp-inner.open {
-  max-height: 220px; /* enough for controls */
-  opacity: 1;
-  visibility: visible;
-}
-.mp-cover {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  box-shadow: 0 6px 20px rgba(0,242,255,0.12);
-  border: 2px solid rgba(255,255,255,0.06);
-}
-.mp-info { flex: 1; min-width: 0; }
-.mp-title { font-weight: 700; font-size: 0.95rem; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mp-artist { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
-.mp-controls button { background: transparent; border: none; color: var(--text-color); font-size: 1rem; margin-right: 8px; cursor: pointer; }
-.mp-progress-wrap { width: 100%; }
-.mp-progress { height: 6px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; cursor: pointer; }
-.mp-progress-bar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-color), var(--secondary-color)); transition: width 0.1s linear; }
-.mp-time { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 6px; }
-.mp-volume { width: 36px; transform: rotate(-90deg); transform-origin: center; margin-left: 6px; }
-
-@media (max-width: 480px) {
-  .music-player { right: 12px; bottom: 12px; width: 300px; }
-  .mp-cover { width: 60px; height: 60px; }
-}
+/* Music player removed per user request */
 
 /* Responsive */
 @media (max-width: 768px) {
