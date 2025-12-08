@@ -10,6 +10,8 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
+  /* Navigation height - used to offset hero on small screens */
+  --nav-height: 72px;
 }
 
 * {
@@ -108,17 +110,19 @@ body::before {
 
 /* Navigation */
 nav {
+  --nav-height: var(--nav-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5%;
+  padding: 1.2rem 5%;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 100;
-  backdrop-filter: blur(15px);
-  background: rgba(5, 5, 5, 0.7);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(5, 5, 5, 0.6);
   border-bottom: 1px solid var(--glass-border);
+  height: var(--nav-height);
 }
 
 .logo {
@@ -136,6 +140,21 @@ nav {
   display: flex;
   list-style: none;
   gap: 3rem;
+  align-items: center;
+}
+
+/* Nav open state for mobile */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(var(--nav-height));
+  right: 0;
+  left: 0;
+  background: rgba(5,5,5,0.98);
+  padding: 1.25rem 2rem;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .nav-links a {
@@ -164,11 +183,11 @@ nav {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10%;
+  padding: calc(var(--nav-height) + 20px) 10% 60px 10%;
   position: relative;
   text-align: center;
 }
@@ -176,6 +195,7 @@ nav {
 .hero-content {
   max-width: 800px;
   z-index: 1;
+  margin-top: 0;
 }
 
 .overline {
@@ -190,9 +210,9 @@ nav {
 
 h1 {
   font-family: var(--font-heading);
-  font-size: 5rem;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 4vw + 1rem, 5rem);
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
   font-weight: 700;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
@@ -523,6 +543,8 @@ h1:hover {
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
+  max-width: 100%;
+  height: auto;
 }
 
 .profile-img:hover {
@@ -570,6 +592,12 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+  nav {
+    --nav-height: 64px;
+    height: var(--nav-height);
+    padding: 0.75rem 4%;
+  }
+
   .nav-links {
     display: none;
   }
@@ -579,11 +607,11 @@ footer {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: clamp(1.6rem, 6vw, 3rem);
   }
 
   .hero {
-    padding-top: 80px;
+    padding: calc(var(--nav-height) + 12px) 6% 48px 6%;
   }
 
   .timeline::before {
@@ -593,7 +621,7 @@ footer {
   .timeline-item {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 30px;
+    padding-left: 18px;
     gap: 1rem;
   }
 
@@ -606,5 +634,31 @@ footer {
   .timeline-content {
     width: 100%;
     text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    --nav-height: 56px;
+    height: var(--nav-height);
+    padding: 0.6rem 4%;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 8vw, 1.8rem);
+  }
+
+  .hero {
+    padding: calc(var(--nav-height) + 10px) 4% 32px 4%;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .social-btn {
+    width: 40px;
+    height: 40px;
   }
 }
