@@ -526,23 +526,24 @@ h1:hover {
 .profile-container {
   margin-bottom: 2rem;
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-img {
-  /* Force a symmetric circular avatar that scales responsively */
+  display: inline-block;
+  /* make container a fixed square so the avatar is always clipped to a circle */
   width: clamp(120px, 20vw, 200px);
   height: clamp(120px, 20vw, 200px);
   border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-img {
+  /* fill the container and be cropped to a perfect circle */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 3px solid var(--accent-color);
+  border: 0;
   box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 2;
-  display: block;
 }
 
 .profile-img:hover {
