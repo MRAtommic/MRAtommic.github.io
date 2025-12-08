@@ -589,6 +589,63 @@ footer {
   border-top: 1px solid var(--glass-border);
 }
 
+/* Music Player (floating) */
+.music-player {
+  position: fixed;
+  right: 20px;
+  bottom: 22px;
+  width: 340px;
+  max-width: calc(100% - 40px);
+  z-index: 2000;
+  font-family: var(--font-body);
+}
+.music-player .mp-toggle {
+  position: absolute;
+  left: -48px;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  color: #021012;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.music-player .mp-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(10,10,10,0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+.mp-cover {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(0,242,255,0.12);
+  border: 2px solid rgba(255,255,255,0.06);
+}
+.mp-info { flex: 1; min-width: 0; }
+.mp-title { font-weight: 700; font-size: 0.95rem; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mp-artist { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
+.mp-controls button { background: transparent; border: none; color: var(--text-color); font-size: 1rem; margin-right: 8px; cursor: pointer; }
+.mp-progress-wrap { width: 100%; }
+.mp-progress { height: 6px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; cursor: pointer; }
+.mp-progress-bar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-color), var(--secondary-color)); transition: width 0.1s linear; }
+.mp-time { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 6px; }
+.mp-volume { width: 36px; transform: rotate(-90deg); transform-origin: center; margin-left: 6px; }
+
+@media (max-width: 480px) {
+  .music-player { right: 12px; bottom: 12px; width: 300px; }
+  .mp-cover { width: 60px; height: 60px; }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {

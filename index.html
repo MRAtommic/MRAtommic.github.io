@@ -116,8 +116,31 @@
         <p>&copy; 2023 My Portfolio. All rights reserved.</p>
     </footer>
 
-    <script type="module" src="/main.js"></script>
-    <script type="module" src="/particles.js"></script>
+        <!-- Music player (floating) -->
+        <div id="music-player" class="music-player">
+            <audio id="site-audio" preload="metadata"></audio>
+            <button class="mp-toggle" aria-label="Open player" title="Open player">♪</button>
+            <div class="mp-inner" role="region" aria-label="Music player">
+                <img src="profile.png" alt="cover" class="mp-cover" id="mp-cover">
+                <div class="mp-info">
+                    <div class="mp-title" id="mp-title">No track</div>
+                    <div class="mp-artist" id="mp-artist">—</div>
+                    <div class="mp-controls">
+                        <button id="mp-prev" aria-label="Previous">⟨</button>
+                        <button id="mp-play" aria-label="Play">▶</button>
+                        <button id="mp-next" aria-label="Next">⟩</button>
+                    </div>
+                    <div class="mp-progress-wrap">
+                        <div class="mp-time"><span id="mp-cur">0:00</span> / <span id="mp-dur">0:00</span></div>
+                        <div class="mp-progress" id="mp-progress"><div class="mp-progress-bar" id="mp-progress-bar"></div></div>
+                    </div>
+                </div>
+                <input type="range" id="mp-volume" class="mp-volume" min="0" max="1" step="0.01" aria-label="Volume">
+            </div>
+        </div>
+
+        <script type="module" src="/main.js"></script>
+        <script type="module" src="/particles.js"></script>
 </body>
 
 </html>
