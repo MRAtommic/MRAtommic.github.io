@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="scroll-progress"></div>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor-glow"></div>
+
+    <nav>
+        <div class="logo">PORTFOLIO<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="profile-container">
+                    <img src="profile.png" alt="Profile" class="profile-img">
+                </div>
+                <span class="overline">Welcome to my portfolio</span>
+                <h1>Hi, I'm <span class="highlight">WEERAPHAT</span></h1>
+                <p class="subtitle"><span class="typing-text"></span><span class="cursor-blink">|</span></p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/atommic.w/" class="social-btn instagram"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:s6606021631050@email.kmutnb.ac.th" class="social-btn email" aria-label="Email"><i
+                            class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/MRAtommic" class="social-btn github" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
+                <a href="#about" class="cta-btn">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="glass-card about-content">
+                <div class="about-text">
+                    <p>I am a passionate developer dedicated to creating stunning web experiences. I love combining
+                        logic with creativity to build websites that are not only functional but also visually
+                        captivating.</p>
+                    <div class="skills">
+                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fab fa-figma"></i> Figma</span>
+                        <span class="skill-tag"><i class="fab fa-php"></i> Php</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="glass-card timeline-content">
+                        <h3>KFC PTT Platinum Wangnoi </h3>
+                        <p class="company">Cashier(Part-time)</p>
+                        <p>Sales & Upselling: Active role in driving revenue by suggesting promotional items and menu
+                            add-ons to achieve daily sales targets.
+                            Customer Experience: Delivered high-quality service with speed and accuracy to ensure high
+                            levels of customer satisfaction.
+                            Brand Standards: Maintained strict adherence to KFC's operational standards, including food
+                            handling, hygiene, and uniform guidelines.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <div class="glass-card timeline-content">
+                        <h3>Web Designer</h3>
+                        <p class="company">Creative Studio</p>
+                        <p>Designed and developed responsive websites for diverse clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="glass-card contact-container">
+                <p>Interested in working together? Let's connect!</p>
+                <a href="mailto:s6606021631050@email.kmutnb.ac.th" class="contact-btn">Say Hello <i
+                        class="fas fa-paper-plane"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/particles.js"></script>
+</body>
+
+</html>
