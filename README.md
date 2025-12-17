@@ -11,7 +11,7 @@
 ## 🛠️ Technology Stack (เทคโนโลยีที่ใช้)
 
 *   **Frontend:** ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-*   **Languages:** ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Java](https://img.shields.io/badge/-Java-ED8B00?style=flat&logo=java&logoColor=white) 
+
 *   **Build Tool:** ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat&logo=vite&logoColor=white)
 *   **Design:** ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat&logo=figma&logoColor=white)
 
@@ -46,7 +46,7 @@
 
 *   **GitHub:** [MRAtommic](https://github.com/MRAtommic)
 *   **Email:** s6606021631050@email.kmutnb.ac.th
-*   **Instagram:** [atommic.w](https://www.instagram.com/vvvcv803/)
+*   **Instagram:** [atommic.w](https://www.instagram.com/atommic.w/)
 
 ---
 <p align="center">Made with ❤️ by Weeraphat</p>
