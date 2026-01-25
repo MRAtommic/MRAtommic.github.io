@@ -45,8 +45,8 @@
 ## 📬 Contact Me (ช่องทางติดต่อ)
 
 *   **GitHub:** [MRAtommic](https://github.com/MRAtommic)
-*   **Email:** s6606021631050@email.kmutnb.ac.th
-*   **Instagram:** [atommic.w](https://www.instagram.com/atommic.w/)
+*   **Email:** mxmm2547@gmail.com 
+*   **Instagram:** [vvvcv803]https://www.instagram.com/vvvcv803?igsh=MW1sMmJ1YWc2NGlnNQ==
 
 ---
 <p align="center">Made with ❤️ by Weeraphat</p>
