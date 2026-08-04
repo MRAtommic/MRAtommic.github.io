@@ -41,11 +41,10 @@
     ```bash
     npm run dev
     ```
-
-    <img width="2556" height="1268" alt="Screenshot 2026-08-05 000410" src="https://github.com/user-attachments/assets/0fb954f0-1499-4f13-9da4-478fce70c3a0" />
-<img width="2559" height="1270" alt="Screenshot 2026-08-05 000424" src="https://github.com/user-attachments/assets/c5e1b887-6272-46cc-86ac-86ae020fed54" />
-<img width="2556" height="1264" alt="Screenshot 2026-08-05 000436" src="https://github.com/user-attachments/assets/065ee884-748b-452f-b574-2bc87c0e7081" />
-<img width="2557" height="1268" alt="Screenshot 2026-08-05 000448" src="https://github.com/user-attachments/assets/9138a518-2f9c-4def-acc5-407a0f10303b" />
+<img width="2556" height="1270" alt="Screenshot 2026-08-05 000410" src="https://github.com/user-attachments/assets/0fb954f0-1499-4f13-9da4-478fce70c3a0" />
+<img width="2556" height="1270" alt="Screenshot 2026-08-05 000424" src="https://github.com/user-attachments/assets/c5e1b887-6272-46cc-86ac-86ae020fed54" />
+<img width="2556" height="1270" alt="Screenshot 2026-08-05 000436" src="https://github.com/user-attachments/assets/065ee884-748b-452f-b574-2bc87c0e7081" />
+<img width="2556" height="1270" alt="Screenshot 2026-08-05 000448" src="https://github.com/user-attachments/assets/9138a518-2f9c-4def-acc5-407a0f10303b" />
 
 
 ##Contact Me (ช่องทางติดต่อ)
