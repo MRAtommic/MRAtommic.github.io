@@ -4,7 +4,7 @@
 พื้นที่นี้รวบรวมทักษะ ผลงาน และความสนใจของผมในด้าน **Web Development** และ **Data Science**
 เว็บไซต์นี้ถูกออกแบบให้มีความทันสมัย รองรับการแสดงผลทุกอุปกรณ์ และมีลูกเล่น Interactive เพื่อประสบการณ์การใช้งานที่ดีเยี่ยม
 
-**Live Site:** [https://mratommic.github.io/](https://mratommic.github.io/)
+**Live Site:** [https://mratommic.github.io/](https://mratommic.github.io/Website_MRAtommic.github.io/)
 
 ---
 
@@ -49,7 +49,7 @@
 
 ##Contact Me (ช่องทางติดต่อ)
 
-*   **GitHub:** [MRAtommic](https://github.com/MRAtommic)
+*   **GitHub:** [MRAtommic](https://mratommic.github.io/Website_MRAtommic.github.io/)
 *   **Email:** mxmm2547@gmail.com 
 
 ---
