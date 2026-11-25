@@ -1106,24 +1106,24 @@ footer {
   }
 }
 
-/* Light Theme (Architectural Tech Grid) */
+/* Light Theme (Warm Matte Stone - Zero Glare) */
 html[data-theme="light"] {
-  --bg-color: #eef1f6;
-  --text-color: #0a0a0e;
-  --text-muted: #4b5563;
-  --accent-color: #0066ff;
-  --secondary-color: #6d28d9;
-  --glass-bg: rgba(255, 255, 255, 0.92);
-  --glass-border: rgba(10, 10, 14, 0.09);
+  --bg-color: #dfd9ce;
+  --text-color: #1c1917;
+  --text-muted: #57534e;
+  --accent-color: #0f766e;
+  --secondary-color: #4338ca;
+  --glass-bg: rgba(236, 231, 222, 0.92);
+  --glass-border: rgba(28, 25, 23, 0.11);
 }
 
 html[data-theme="light"] body {
-  background-color: #eef1f6;
+  background-color: #dfd9ce;
   background-image:
-    radial-gradient(at 10% 10%, rgba(0, 102, 255, 0.09) 0px, transparent 45%),
-    radial-gradient(at 90% 80%, rgba(109, 40, 217, 0.07) 0px, transparent 45%),
-    linear-gradient(to right, rgba(10, 10, 14, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 10, 14, 0.04) 1px, transparent 1px);
+    radial-gradient(at 15% 15%, rgba(15, 118, 110, 0.08) 0px, transparent 48%),
+    radial-gradient(at 85% 80%, rgba(67, 56, 202, 0.06) 0px, transparent 48%),
+    linear-gradient(to right, rgba(28, 25, 23, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 25, 23, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   background-attachment: fixed;
   animation: none;
@@ -1135,15 +1135,15 @@ html[data-theme="light"] body::before {
 
 html[data-theme="light"] #cursor-glow {
   mix-blend-mode: normal;
-  background: radial-gradient(circle, rgba(0, 102, 255, 0.07), transparent 68%);
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.08), transparent 68%);
 }
 
 html[data-theme="light"] nav {
-  background: rgba(238, 241, 246, 0.82);
+  background: rgba(223, 217, 206, 0.86);
 }
 
 html[data-theme="light"] .nav-links.open {
-  background: rgba(238, 241, 246, 0.98);
+  background: rgba(223, 217, 206, 0.98);
   border-bottom: 1px solid var(--glass-border);
 }
 
@@ -1157,81 +1157,81 @@ html[data-theme="light"] .highlight {
 }
 
 html[data-theme="light"] .glass-card {
-  box-shadow: 0 4px 20px -4px rgba(10, 10, 14, 0.06), 0 1px 3px rgba(10, 10, 14, 0.04);
+  box-shadow: 0 4px 20px -4px rgba(28, 25, 23, 0.08), 0 1px 3px rgba(28, 25, 23, 0.05);
 }
 
 html[data-theme="light"] .glass-card:hover {
-  border-color: rgba(0, 102, 255, 0.35);
-  box-shadow: 0 14px 32px -8px rgba(0, 102, 255, 0.12), 0 2px 6px rgba(10, 10, 14, 0.05);
+  border-color: rgba(15, 118, 110, 0.38);
+  box-shadow: 0 12px 28px -8px rgba(28, 25, 23, 0.13);
 }
 
 html[data-theme="light"] .social-btn {
-  background: #ffffff;
+  background: #ece7de;
   color: var(--text-color);
-  box-shadow: 0 2px 8px rgba(10, 10, 14, 0.05);
+  box-shadow: 0 2px 6px rgba(28, 25, 23, 0.06);
 }
 
 html[data-theme="light"] .social-btn:hover {
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
+  color: #f5f2eb;
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.22);
 }
 
 html[data-theme="light"] .cta-btn:not(.cta-secondary),
 html[data-theme="light"] .contact-btn {
-  background: #0a0a0e;
-  color: #ffffff;
-  border-color: #0a0a0e;
+  background: #1c1917;
+  color: #f5f2eb;
+  border-color: #1c1917;
 }
 
 html[data-theme="light"] .cta-btn:not(.cta-secondary):hover,
 html[data-theme="light"] .contact-btn:hover {
   background: var(--accent-color);
   border-color: var(--accent-color);
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.28);
+  color: #f5f2eb;
+  box-shadow: 0 8px 22px rgba(15, 118, 110, 0.24);
 }
 
 html[data-theme="light"] .cta-secondary {
-  background: #ffffff;
+  background: #ece7de;
   color: var(--text-color);
-  border-color: rgba(10, 10, 14, 0.14);
+  border-color: rgba(28, 25, 23, 0.15);
 }
 
 html[data-theme="light"] .cta-secondary:hover {
-  background: #0a0a0e;
-  color: #ffffff;
-  border-color: #0a0a0e;
+  background: #1c1917;
+  color: #f5f2eb;
+  border-color: #1c1917;
   box-shadow: none;
 }
 
 html[data-theme="light"] .skill-tag {
-  background: rgba(10, 10, 14, 0.035);
+  background: rgba(28, 25, 23, 0.045);
   color: var(--text-color);
 }
 
 html[data-theme="light"] .skill-tag:hover {
-  background: rgba(0, 102, 255, 0.08);
+  background: rgba(15, 118, 110, 0.1);
   border-color: var(--accent-color);
 }
 
 html[data-theme="light"] .project-stack {
-  color: #64748b;
+  color: #57534e;
 }
 
 html[data-theme="light"] .timeline::before {
-  background: linear-gradient(to bottom, transparent, rgba(10, 10, 14, 0.15), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(28, 25, 23, 0.16), transparent);
 }
 
 html[data-theme="light"] .timeline-item::after {
-  border-color: #eef1f6;
+  border-color: #dfd9ce;
 }
 
 html[data-theme="light"] .email-box {
-  background: rgba(10, 10, 14, 0.035);
+  background: rgba(28, 25, 23, 0.045);
 }
 
 html[data-theme="light"] .copy-btn {
-  background: #ffffff;
+  background: #ece7de;
 }
 
 html[data-theme="light"] .copy-btn.copied {
@@ -1241,12 +1241,12 @@ html[data-theme="light"] .copy-btn.copied {
 }
 
 html[data-theme="light"] .hero-avatar-wrap {
-  border: 2px solid #ffffff;
-  box-shadow: 0 8px 24px rgba(10, 10, 14, 0.08);
+  border: 2px solid rgba(236, 231, 222, 0.95);
+  box-shadow: 0 8px 24px rgba(28, 25, 23, 0.1);
 }
 
 html[data-theme="light"] .photo-dot {
-  background: rgba(10, 10, 14, 0.18);
+  background: rgba(28, 25, 23, 0.2);
 }
 
 html[data-theme="light"] .photo-dot.active {
@@ -1254,11 +1254,11 @@ html[data-theme="light"] .photo-dot.active {
 }
 
 html[data-theme="light"] .glass-card.hero-card::before {
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.18), rgba(109, 40, 217, 0.16));
-  opacity: 0.35;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.16), rgba(67, 56, 202, 0.14));
+  opacity: 0.3;
 }
 
 html[data-theme="light"] footer {
-  background: rgba(226, 231, 239, 0.85);
+  background: rgba(212, 205, 193, 0.85);
   color: var(--text-muted);
 }

@@ -9,7 +9,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const darkColors = ['#ffffff', '#ffffff', '#ffffff', '#00f2ff', '#7000ff'];
-const lightColors = ['#94a3b8', '#0066ff', '#6d28d9'];
+const lightColors = ['#78716c', '#0f766e', '#4338ca'];
 
 function isLightTheme() {
     return document.documentElement.getAttribute('data-theme') === 'light';
