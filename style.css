@@ -409,6 +409,73 @@ h1 {
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--glass-border);
+  cursor: pointer;
+  position: relative;
+}
+
+.photo-hint {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(8, 8, 12, 0.68);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.hero-avatar-wrap:hover .photo-hint,
+.hero-avatar-wrap:focus-visible .photo-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  padding: 0 0.15rem;
+}
+
+.hero-card-caption {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.photo-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.photo-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.photo-dot.active {
+  width: 20px;
+  background: var(--accent-color);
 }
 
 .hero-avatar {
@@ -416,6 +483,12 @@ h1 {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.hero-avatar.switching {
+  opacity: 0.35;
+  transform: scale(0.98);
 }
 
 .hero-card-footer {
@@ -866,65 +939,6 @@ h1 {
   color: var(--accent-color);
 }
 
-/* Profile Image */
-.profile-container {
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-  /* make container a fixed square so the avatar is always clipped to a circle */
-  width: clamp(120px, 20vw, 200px);
-  height: clamp(120px, 20vw, 200px);
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.profile-img {
-  /* fill the container and be cropped to a perfect circle */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 0;
-  box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.profile-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 50px rgba(0, 242, 255, 0.5);
-  border-color: var(--secondary-color);
-}
-
-.profile-container::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-  z-index: 1;
-  opacity: 0.5;
-  filter: blur(10px);
-  animation: pulse-glow 3s infinite;
-}
-
-@keyframes pulse-glow {
-
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -967,15 +981,32 @@ footer {
     justify-content: center;
   }
 
+  .hero-card-meta {
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+
+  .hero-card-caption,
+  .photo-hint {
+    display: none;
+  }
+
   .glass-card.hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: fit-content;
     max-width: 100%;
     padding: 0.45rem;
-    border-radius: 50%;
+    border-radius: 999px;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
   }
 
   .glass-card.hero-card::before {
-    border-radius: 50%;
+    display: none;
   }
 
   .hero-avatar-wrap {
@@ -983,10 +1014,7 @@ footer {
     height: 130px;
     margin-bottom: 0;
     border-radius: 50%;
-  }
-
-  .hero-card-caption {
-    display: none;
+    border: 2px solid var(--glass-border);
   }
 
   .hero-text {
@@ -1205,17 +1233,17 @@ html[data-theme="light"] .copy-btn.copied {
   background: rgba(21, 128, 61, 0.08);
 }
 
-html[data-theme="light"] .profile-img {
-  box-shadow: 0 8px 28px rgba(3, 105, 161, 0.2);
-}
-
-html[data-theme="light"] .profile-container::before {
-  opacity: 0.28;
-}
-
 html[data-theme="light"] .hero-avatar-wrap {
   border: 2px solid rgba(255, 255, 255, 0.92);
   box-shadow: 0 8px 24px rgba(3, 105, 161, 0.14);
+}
+
+html[data-theme="light"] .photo-dot {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+html[data-theme="light"] .photo-dot.active {
+  background: var(--accent-color);
 }
 
 html[data-theme="light"] .glass-card.hero-card::before {
@@ -1225,6 +1253,14 @@ html[data-theme="light"] .glass-card.hero-card::before {
 html[data-theme="light"] .hero-avatar-wrap {
   border: 2px solid rgba(255, 255, 255, 0.92);
   box-shadow: 0 8px 24px rgba(3, 105, 161, 0.14);
+}
+
+html[data-theme="light"] .photo-dot {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+html[data-theme="light"] .photo-dot.active {
+  background: var(--accent-color);
 }
 
 html[data-theme="light"] .glass-card.hero-card::before {

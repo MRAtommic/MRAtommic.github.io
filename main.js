@@ -214,6 +214,53 @@ if (themeToggleBtn) {
     });
 }
 
+/* --- Click-to-Switch Profile Photo --- */
+const avatarWrap = document.getElementById('hero-avatar-wrap');
+const avatarImg = document.getElementById('hero-avatar');
+const photoCounter = document.getElementById('photo-counter');
+const photoDots = document.querySelectorAll('.photo-dot');
+const profilePhotos = ['profile.png', 'profile-2.png', 'profile-3.png'];
+let currentPhotoIndex = 0;
+
+if (avatarWrap && avatarImg) {
+    profilePhotos.slice(1).forEach(src => {
+        const pre = new Image();
+        pre.src = src;
+    });
+
+    const setPhoto = (nextIndex) => {
+        if (nextIndex === currentPhotoIndex) return;
+        currentPhotoIndex = nextIndex;
+        avatarImg.classList.add('switching');
+        photoDots.forEach((dot, i) => dot.classList.toggle('active', i === currentPhotoIndex));
+        if (photoCounter) {
+            photoCounter.textContent = `${currentPhotoIndex + 1} / ${profilePhotos.length}`;
+        }
+        setTimeout(() => {
+            avatarImg.src = profilePhotos[currentPhotoIndex];
+            avatarImg.classList.remove('switching');
+        }, 160);
+    };
+
+    const nextPhoto = () => setPhoto((currentPhotoIndex + 1) % profilePhotos.length);
+
+    avatarWrap.addEventListener('click', nextPhoto);
+    avatarWrap.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            nextPhoto();
+        }
+    });
+
+    photoDots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idx = Number(dot.dataset.index);
+            if (!Number.isNaN(idx)) setPhoto(idx);
+        });
+    });
+}
+
 /* --- Active Nav Link on Scroll --- */
 const navSections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
