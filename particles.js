@@ -8,7 +8,12 @@ let shootingStarsArray;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const colors = ['#ffffff', '#ffffff', '#ffffff', '#00f2ff', '#7000ff']; // Mostly white, some theme colors
+const darkColors = ['#ffffff', '#ffffff', '#ffffff', '#00f2ff', '#7000ff'];
+const lightColors = ['#64748b', '#94a3b8', '#0369a1', '#6d28d9'];
+
+function isLightTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'light';
+}
 
 class Star {
     constructor() {
@@ -17,20 +22,25 @@ class Star {
         this.size = Math.random() * 2;
         this.speedX = (Math.random() * 0.2) - 0.1; // Slower, more natural drift
         this.speedY = (Math.random() * 0.2) - 0.1;
-        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.colorIndex = Math.floor(Math.random() * darkColors.length);
         this.alpha = Math.random();
         this.twinkleSpeed = Math.random() * 0.01 + 0.002;
         this.isFading = Math.random() > 0.5;
     }
 
     draw() {
+        const light = isLightTheme();
+        const palette = light ? lightColors : darkColors;
+        const color = palette[this.colorIndex % palette.length];
         ctx.save();
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = this.alpha;
-        ctx.shadowBlur = this.size * 2;
-        ctx.shadowColor = this.color;
+        ctx.arc(this.x, this.y, light ? this.size * 1.15 : this.size, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.globalAlpha = light ? this.alpha * 0.35 : this.alpha;
+        if (!light) {
+            ctx.shadowBlur = this.size * 2;
+            ctx.shadowColor = color;
+        }
         ctx.fill();
         ctx.restore();
     }
@@ -139,8 +149,10 @@ function animate() {
     for (let i = 0; i < starsArray.length; i++) {
         starsArray[i].update();
     }
-    for (let i = 0; i < shootingStarsArray.length; i++) {
-        shootingStarsArray[i].update();
+    if (!isLightTheme()) {
+        for (let i = 0; i < shootingStarsArray.length; i++) {
+            shootingStarsArray[i].update();
+        }
     }
 }
 

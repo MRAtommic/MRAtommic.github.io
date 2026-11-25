@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300f2ff'/%3E%3Cstop offset='100%25' stop-color='%237000ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23080808'/%3E%3Crect x='2' y='2' width='60' height='60' rx='14' fill='none' stroke='url(%23g)' stroke-width='3'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='32' fill='url(%23g)'%3EW%3C/text%3E%3C/svg%3E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Creative Developer</title>
+    <title>Weeraphat Chuenchob | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -21,78 +22,242 @@
     <div id="cursor-glow"></div>
 
     <nav>
-        <div class="logo">PORTFOLIO<span class="dot">.</span></div>
+        <a href="#home" class="logo">PORTFOLIO<span class="dot">.</span></a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-            <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
+        <div class="nav-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme"
+                title="Toggle light/dark theme">
+                <i class="fas fa-sun" aria-hidden="true"></i>
+            </button>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
     </nav>
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="profile-container">
-                    <img src="profile.png" alt="Profile" class="profile-img">
+                <div class="hero-text">
+                    <h1>Weeraphat Chuenchob</h1>
+                    <p class="subtitle"><span class="typing-text">Software &amp; Web Developer</span><span
+                            class="cursor-blink">|</span></p>
+                    <p class="hero-bio">4th-year IT student at KMUTNB building workflow automation, full-stack web
+                        apps, and practical AI tools.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="cta-btn">View My Work</a>
+                        <a href="resume.pdf" download class="cta-btn cta-secondary">Download CV</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/MRAtommic" target="_blank" rel="noopener noreferrer"
+                            class="social-btn github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:mxmm2547@gmail.com" class="social-btn email" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/atommic.w/" target="_blank" rel="noopener noreferrer"
+                            class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-                <span class="overline">Welcome to my portfolio</span>
-                <h1>Hi, I'm <span class="highlight">WEERAPHAT</span></h1>
-                <p class="subtitle"><span class="typing-text"></span><span class="cursor-blink">|</span></p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/atommic.w/" class="social-btn instagram"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:s6606021631050@email.kmutnb.ac.th" class="social-btn email" aria-label="Email"><i
-                            class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/MRAtommic" class="social-btn github" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
+
+                <div class="hero-visual">
+                    <div class="glass-card hero-card">
+                        <div class="hero-avatar-wrap">
+                            <img src="profile.png" alt="Weeraphat Chuenchob" class="hero-avatar">
+                        </div>
+                        <p class="hero-card-caption">KMUTNB · IT Year 4</p>
+                    </div>
                 </div>
-                <a href="#about" class="cta-btn">View My Work</a>
             </div>
         </section>
 
         <section id="about" class="section">
             <h2 class="section-title">About Me</h2>
             <div class="glass-card about-content">
-                <div class="about-text">
-                    <p>I am a passionate developer dedicated to creating stunning web experiences. I love combining
-                        logic with creativity to build websites that are not only functional but also visually
-                        captivating.</p>
-                    <div class="skills">
-                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
-                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-                        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
-                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-                        <span class="skill-tag"><i class="fab fa-figma"></i> Figma</span>
-                        <span class="skill-tag"><i class="fab fa-php"></i> Php</span>
-                    </div>
+                <div class="about-bio">
+                    <p>4th-year Information Technology student at King Mongkut's University of Technology North Bangkok
+                        (KMUTNB) with Data Analyst internship experience at Heartwarming Co., Ltd. I build web
+                        applications, workflow automation tools, and practical AI systems.</p>
                 </div>
+                <div class="skill-groups">
+                        <div class="skill-group">
+                            <span class="skill-group-label">Languages</span>
+                            <div class="skills">
+                                <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                                <span class="skill-tag"><i class="fas fa-code"></i> TypeScript</span>
+                                <span class="skill-tag"><i class="fab fa-php"></i> PHP</span>
+                                <span class="skill-tag"><i class="fab fa-android"></i> Kotlin</span>
+                                <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                                <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <span class="skill-group-label">Frameworks &amp; UI</span>
+                            <div class="skills">
+                                <span class="skill-tag"><i class="fas fa-server"></i> Flask</span>
+                                <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                                <span class="skill-tag"><i class="fas fa-wind"></i> Tailwind CSS</span>
+                                <span class="skill-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                                <span class="skill-tag"><i class="fab fa-figma"></i> Figma</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <span class="skill-group-label">AI, Data &amp; Tools</span>
+                            <div class="skills">
+                                <span class="skill-tag"><i class="fas fa-brain"></i> TensorFlow</span>
+                                <span class="skill-tag"><i class="fas fa-database"></i> ChromaDB</span>
+                                <span class="skill-tag"><i class="fas fa-robot"></i> Gemini AI</span>
+                                <span class="skill-tag"><i class="fas fa-file-alt"></i> Tesseract OCR</span>
+                                <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <article class="glass-card project-card">
+                    <div class="project-meta">
+                        <span class="project-index">01 / RAG &amp; Automation</span>
+                        <div class="project-links">
+                            <a href="https://github.com/MRAtommic/orgchat-ai" target="_blank"
+                                rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <h3>OrgChat AI</h3>
+                    <p class="project-desc">Internal AI &amp; automation platform built with Flask, ChromaDB, and
+                        Gemini AI—featuring AI OCR auto-logging to Google Sheets with document matching, RAG Q&amp;A,
+                        and web-based leave tracking with reports.</p>
+                    <p class="project-stack">Python · Flask · ChromaDB · Gemini AI · Google Sheets · OCR</p>
+                </article>
+
+                <article class="glass-card project-card">
+                    <div class="project-meta">
+                        <span class="project-index">02 / Machine Learning</span>
+                        <div class="project-links">
+                            <a href="https://github.com/MRAtommic/Image-Classification-using-MobileNetV2-with-Transfer-Learning"
+                                target="_blank" rel="noopener noreferrer">GitHub <i
+                                    class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <h3>Project Coconut (MobileNetV2)</h3>
+                    <p class="project-desc">Coconut image classifier built with TensorFlow and MobileNetV2 (ImageNet
+                        transfer learning), 224×224 augmentation, Global Average Pooling, and sigmoid confidence
+                        scoring.</p>
+                    <p class="project-stack">Python · TensorFlow · MobileNetV2 · ImageNet</p>
+                </article>
+
+                <article class="glass-card project-card">
+                    <div class="project-meta">
+                        <span class="project-index">03 / Full-Stack Web App</span>
+                        <div class="project-links">
+                            <a href="https://github.com/MRAtommic/POS_STORE_ME" target="_blank"
+                                rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <h3>QR Ordering &amp; POS System</h3>
+                    <p class="project-desc">Real-time QR ordering and POS web app for a local crêpe shop in Ayutthaya,
+                        with WebSocket live orders, PromptPay slip upload, Thai voice alerts, and LINE OA
+                        notifications.</p>
+                    <p class="project-stack">Node.js · Express · WebSocket · LINE API · JavaScript</p>
+                </article>
+
+                <article class="glass-card project-card">
+                    <div class="project-meta">
+                        <span class="project-index">04 / UI/UX Design</span>
+                        <div class="project-links">
+                            <a href="https://www.figma.com/proto/vvKHI2VMWhKnI6xLCKkYF5/UX-UI-final?node-id=1-3&starting-point-node-id=1%3A3&t=kAHW38tvLML70Bk2-1"
+                                target="_blank" rel="noopener noreferrer">Prototype <i
+                                    class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                            <a href="https://github.com/MRAtommic/Website-Design-Figma" target="_blank"
+                                rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <h3>Freelance Marketplace UI</h3>
+                    <p class="project-desc">Web interface and clickable user-flow prototype for an online freelance
+                        hiring platform, designed in Figma.</p>
+                    <p class="project-stack">Figma · UI/UX · Prototyping</p>
+                </article>
+
+                <article class="glass-card project-card">
+                    <div class="project-meta">
+                        <span class="project-index">05 / Desktop App</span>
+                        <div class="project-links">
+                            <a href="https://github.com/MRAtommic/Game-Stock-for-Java" target="_blank"
+                                rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <h3>Stock Trading Simulator</h3>
+                    <p class="project-desc">Java Swing stock game built with OOP principles—start with $1,000 and trade
+                        4 assets over 200 days to reach $5,000, with full transaction history and portfolio tracking.</p>
+                    <p class="project-stack">Java · Swing · OOP</p>
+                </article>
+
+                <article class="glass-card project-card">
+                    <div class="project-meta">
+                        <span class="project-index">06 / 2D Game</span>
+                        <div class="project-links">
+                            <a href="https://github.com/MRAtommic/Game-Space-Survival-Meteor-Dash" target="_blank"
+                                rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <h3>Space Survival: Meteor Dash</h3>
+                    <p class="project-desc">Arcade space-dodging game I built in Python during my freshman year at
+                        university.</p>
+                    <p class="project-stack">Python · Game Dev</p>
+                </article>
+            </div>
+
+            <div class="projects-more">
+                <a href="https://github.com/MRAtommic?tab=repositories" target="_blank" rel="noopener noreferrer"
+                    class="cta-btn">
+                    More on GitHub
+                </a>
             </div>
         </section>
 
         <section id="experience" class="section">
-            <h2 class="section-title">Projects Experience</h2>
+            <h2 class="section-title">Education &amp; Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">2023 - Present</div>
                     <div class="glass-card timeline-content">
-                        <h3>KFC PTT Platinum Wangnoi </h3>
-                        <p class="company">Cashier(Part-time)</p>
-                        <p> standards, including food
-                            handling, hygiene, and uniform guidelines.
-                        </p>
+                        <h3>KMUTNB</h3>
+                        <p class="company">B.Sc. in Information Technology · Year 4</p>
+                        <p>King Mongkut's University of Technology North Bangkok — focusing on software development, web
+                            technologies, UI/UX design, and applied machine learning.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2024</div>
+                    <div class="timeline-date">2 Months · Intern</div>
                     <div class="glass-card timeline-content">
-                        <h3>Stock Trading Simulator</h3>
-                        <p class="company">Lead Programmer</p>
-                        <p>Java Swing desktop application featuring a dynamic market engine with randomized price fluctuations, automated P&L calculations, and a robust portfolio state management system.</p>
+                        <h3>Heartwarming Co., Ltd.</h3>
+                        <p class="company">Data Analyst (Intern)</p>
+                        <p>Automated manual workflows with <strong>OrgChat AI</strong>—cutting expense-entry time via AI
+                            OCR to Google Sheets with document matching, adding an internal Q&amp;A chatbot, and
+                            replacing verbal/LINE leave requests with a web quota &amp; reporting system.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="glass-card timeline-content">
+                        <h3>KFC PTT Platinum Wangnoi</h3>
+                        <p class="company">Cashier (Part-time)</p>
+                        <p>Maintained brand and operational standards, including food handling, hygiene, and uniform
+                            guidelines.</p>
                     </div>
                 </div>
             </div>
@@ -101,19 +266,34 @@
         <section id="contact" class="section">
             <h2 class="section-title">Get In Touch</h2>
             <div class="glass-card contact-container">
-                <p>Interested in working together? Let's connect!</p>
-                <a href="mailto:s6606021631050@email.kmutnb.ac.th" class="contact-btn">Say Hello <i
-                        class="fas fa-paper-plane"></i></a>
+                <p>Open to software &amp; web development opportunities. Feel free to reach out directly.</p>
+                <div class="email-box">
+                    <span class="email-text">mxmm2547@gmail.com</span>
+                    <button type="button" id="copy-email-btn" class="copy-btn" data-email="mxmm2547@gmail.com"
+                        aria-label="Copy email address">
+                        <i class="far fa-copy" aria-hidden="true"></i>
+                        <span>Copy</span>
+                    </button>
+                </div>
+                <div class="contact-actions">
+                    <a href="mailto:mxmm2547@gmail.com" class="contact-btn">Send Email</a>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://github.com/MRAtommic" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <span>·</span>
+                    <a href="https://www.instagram.com/atommic.w/" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 Weeraphat Chuenchob. All rights reserved.</p>
     </footer>
 
-        <script type="module" src="/main.js"></script>
-        <script type="module" src="/particles.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="particles.js"></script>
 </body>
 
 </html>

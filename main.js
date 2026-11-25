@@ -16,10 +16,10 @@ window.addEventListener('scroll', () => {
 
 // Typing Effect
 const typingText = document.querySelector('.typing-text');
-const words = ["Creative Developer", "UI/UX Designer", "Tech Enthusiast"];
+const words = ["Software & Web Developer", "Data Analyst", "AI & Automation Builder"];
 let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let charIndex = words[0].length;
+let isDeleting = true;
 
 function type() {
     const currentWord = words[wordIndex];
@@ -45,33 +45,37 @@ function type() {
 }
 
 if (typingText) {
-    type();
+    typingText.textContent = words[0];
+    setTimeout(type, 2000);
 }
 
-// 3D Tilt Effect for Glass Cards
-document.querySelectorAll('.glass-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+// 3D Tilt Effect for Glass Cards (desktop hover only)
+if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * 5; // Subtle tilt
-        const rotateY = ((x - centerX) / centerX) * -5;
+            const rotateX = ((y - centerY) / centerY) * 5; // Subtle tilt
+            const rotateY = ((x - centerX) / centerX) * -5;
 
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
     });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-    });
-});
+}
 
 // Scroll Animation (Intersection Observer)
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.02,
+    rootMargin: '0px 0px -20px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -178,5 +182,90 @@ interactiveElements.forEach(element => {
     });
 });
 
-/* --- Music Player Logic --- */
-// Music player removed — logic deleted per user request
+/* --- Theme Toggle (Dark / Light) --- */
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+function applyTheme(theme) {
+    const isLight = theme === 'light';
+    if (isLight) {
+        document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
+
+    if (themeToggleBtn) {
+        const icon = themeToggleBtn.querySelector('i');
+        if (icon) {
+            icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+        }
+        themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    }
+}
+
+const savedTheme = localStorage.getItem('theme') || 'dark';
+applyTheme(savedTheme);
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        const next = current === 'light' ? 'dark' : 'light';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+    });
+}
+
+/* --- Active Nav Link on Scroll --- */
+const navSections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+function updateActiveNav() {
+    const scrollPos = window.scrollY + 140;
+    let currentId = '';
+
+    navSections.forEach(sec => {
+        if (scrollPos >= sec.offsetTop) {
+            currentId = sec.getAttribute('id');
+        }
+    });
+
+    navAnchors.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+    });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
+const copyEmailBtn = document.getElementById('copy-email-btn');
+
+if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async () => {
+        const email = copyEmailBtn.dataset.email;
+        const label = copyEmailBtn.querySelector('span');
+        const icon = copyEmailBtn.querySelector('i');
+
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(email);
+            } else {
+                const tempInput = document.createElement('input');
+                tempInput.value = email;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+            }
+
+            copyEmailBtn.classList.add('copied');
+            if (label) label.textContent = 'Copied!';
+            if (icon) icon.className = 'fas fa-check';
+
+            setTimeout(() => {
+                copyEmailBtn.classList.remove('copied');
+                if (label) label.textContent = 'Copy';
+                if (icon) icon.className = 'far fa-copy';
+            }, 2000);
+        } catch (err) {
+            if (label) label.textContent = 'Failed';
+        }
+    });
+}
